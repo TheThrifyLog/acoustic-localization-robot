@@ -1,4 +1,5 @@
 # Acoustic Localization Robot
+![Acoustic Localization Robot](robot_overview.jpg)
 
 ## Overview
 This project documents the design and build of a small tracked mobile robot intended to localize human voice / sound sources for search-and-rescue style scenarios. The system integrates a microphone array for acoustic direction finding, a drive platform (tank chassis + suspension + drivetrain), embedded motor control, and iterative testing to validate subsystem performance and end-to-end integration.
