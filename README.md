@@ -157,7 +157,32 @@ The localization approach focused on estimating the *direction-of-arrival (DoA)*
 - Iterative test-and-adjust cycles were required to converge on stable performance
 
 ## Testing & Results
-What worked, what didn’t, key measurements.
+Testing was conducted incrementally at the subsystem and full-system levels to validate mechanical performance, motor control, sensing, and integration.
+
+### Mechanical & Drivetrain Testing
+- Motors were tested unloaded and under drivetrain load
+- Initial testing revealed excessive mechanical resistance that prevented reliable motion
+- After iterative adjustment and break-in, the drivetrain operated smoothly and consistently
+
+### Motor Control Testing
+- Motor speed and direction were validated using a DC power supply and embedded PWM control
+- Early testing exposed audible harmonics caused by PWM frequency selection
+- Increasing PWM frequency reduced audible noise and improved overall system behavior
+
+### Mobility Testing
+- With the drivetrain fully assembled, the robot successfully drove under its own power
+- Suspension performance maintained track contact and stability during motion
+- Achieving reliable mobility marked a major integration milestone
+
+### Acoustic Localization Testing
+- Multiple microphone configurations were tested to evaluate direction-finding stability
+- Direction-of-arrival estimates were repeatable and accurate after tuning
+- Distance estimation remained unreliable and was deprioritized in favor of directional output
+
+### System Integration
+- Motor control, sensing, and camera subsystems were integrated incrementally
+- Serial output was used to verify internal states and debug timing and logic issues
+- Final system demonstrated coordinated motion, sensing, and operator feedback
 
 ## Challenges & Lessons Learned
 - **3D printing is a schedule risk**: Print failures and tolerance/quality differences between printers impacted fit and forced reprints and redesign decisions. Plan buffer time and validate critical parts early. :contentReference[oaicite:2]{index=2}
@@ -175,7 +200,14 @@ What worked, what didn’t, key measurements.
 - **Morale is an engineering variable**: Getting the robot driving reliably was a major psychological inflection point for the team and improved execution velocity across remaining integration tasks. :contentReference[oaicite:8]{index=8}
 
 ## Future Improvements
-What you would do next with more time/resources.
+With additional time and resources, several improvements could significantly enhance system performance and capability:
+
+- **Expanded Microphone Array**: Increasing from 3 to 6 microphones could improve robustness and enable more reliable distance estimation.
+- **Improved Signal Processing**: Applying cross-correlation, filtering, and windowing techniques could improve timing resolution and noise resilience.
+- **Mechanical Isolation**: Further vibration damping between drivetrain and microphones could improve sensing accuracy.
+- **Companion Computer**: Adding a single-board computer would enable higher-level processing and advanced algorithms.
+- **ROS2 Integration**: Migrating sensing and control into ROS2 nodes would support modular development, visualization, and future autonomy.
+- **Autonomous Behaviors**: Direction estimates could be used to automatically orient or drive toward detected sound sources.
 
 ## Media
 Photos, videos, diagrams.
