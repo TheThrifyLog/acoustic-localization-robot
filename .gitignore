@@ -1,0 +1,30 @@
+# ===== Arduino / Embedded =====
+*.elf
+*.hex
+*.bin
+*.map
+*.eep
+*.o
+*.a
+*.d
+*.lst
+
+# Arduino build folders
+/build/
+/build-*/
+/.tmp/
+/tmp/
+
+# ESP32 / PlatformIO (safe even if unused)
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# ===== IDEs =====
+.vscode/
+.idea/
+*.swp
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
