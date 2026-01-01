@@ -134,7 +134,27 @@ The software stack was designed around embedded real-time control, incremental t
 - Microcontroller-based nodes could be bridged to higher-level ROS2 processing on a companion computer for advanced perception and navigation
 
 ## Acoustic Localization Approach
-Microphone configuration, direction vs distance strategy, limitations.
+The localization approach focused on estimating the *direction-of-arrival (DoA)* of a sound source using a compact microphone array mounted on the robot. Multiple microphone configurations were tested to balance physical constraints, robustness, and directional accuracy.
+
+### Array Configurations
+- Tested multiple 3-microphone geometries mounted on the robot body
+- Array geometry was iterated to improve stability of direction estimates
+- Expansion to 6 microphones was considered but rejected due to schedule and integration risk
+
+### Direction Estimation
+- Primary goal: reliable direction estimates (bearing) toward the sound source
+- Approach leverages differences between microphone signals (relative timing and/or amplitude)
+- Empirical testing demonstrated strong directional performance after iterative tuning
+
+### Distance Estimation (Limitations)
+- Distance estimation was explored but proved significantly less accurate than direction
+- Environmental effects (reflections, background noise), timing resolution limits, and array geometry sensitivity likely contributed to error
+- Final implementation prioritized robust direction output over unreliable range estimates
+
+### Practical Notes
+- Mechanical vibration and electrical noise from the drivetrain were treated as system-level constraints, not just “code problems”
+- Motor PWM harmonics/noise were reduced to improve overall sensing conditions
+- Iterative test-and-adjust cycles were required to converge on stable performance
 
 ## Testing & Results
 What worked, what didn’t, key measurements.
