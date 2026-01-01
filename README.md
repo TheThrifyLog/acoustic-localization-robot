@@ -72,7 +72,35 @@ The robot is organized as a set of tightly-coupled subsystems designed to suppor
 
 
 ## Hardware Design
-Chassis, drivetrain, suspension, sensors, compute.
+The hardware design emphasized robustness, modularity, and ease of iteration. The robot was built around a compact tracked chassis to support uneven terrain while carrying sensing and compute hardware.
+
+### Chassis & Mobility
+- Tracked tank-style platform selected for stability and terrain adaptability
+- 3D-printed chassis components enabled rapid iteration and fit adjustments
+- Open internal volume allowed flexible placement of electronics and sensors
+
+### Suspension & Drivetrain
+- Christie-style suspension system used to maintain continuous track contact
+- DC gear motors selected to provide sufficient torque for added payload
+- Sprockets, road wheels, and track links assembled and tuned to reduce binding
+- Mechanical resistance was minimized through iterative assembly and testing
+
+### Sensors
+- Multiple electret condenser microphones mounted on the robot body
+- Microphone placement designed to test different array geometries
+- ESP32 camera module mounted for forward-facing visual feedback
+
+### Embedded Electronics
+- Arduino-based microcontroller for real-time motor control and sensing
+- Motor drivers interfaced via PWM and direction signals
+- Power wiring routed to minimize electrical noise coupling into microphones
+
+### Mechanical Iteration & Assembly
+- Significant hands-on assembly including:
+  - Press-fit inserts
+  - Track link assembly
+  - Suspension tuning
+- Component tolerances and print quality required frequent inspection and adjustment
 
 ## Software Stack
 Arduino, ESP-32, signal processing approach, future ROS2 path.
