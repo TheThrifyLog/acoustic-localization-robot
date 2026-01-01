@@ -185,19 +185,19 @@ Testing was conducted incrementally at the subsystem and full-system levels to v
 - Final system demonstrated coordinated motion, sensing, and operator feedback
 
 ## Challenges & Lessons Learned
-- **3D printing is a schedule risk**: Print failures and tolerance/quality differences between printers impacted fit and forced reprints and redesign decisions. Plan buffer time and validate critical parts early. :contentReference[oaicite:2]{index=2}
+- **3D printing is a schedule risk**: Print failures and tolerance/quality differences between printers impacted fit and forced reprints and redesign decisions. Plan buffer time and validate critical parts early.
 
-- **Mechanical friction can look like an electrical problem**: Stiff drivetrain components created enough resistance that the motors struggled, which led to overcurrent warnings and “short-circuit-like” behavior on the supply. We had to mechanically free up the drivetrain before reliable testing. :contentReference[oaicite:3]{index=3}
+- **Mechanical friction can look like an electrical problem**: Stiff drivetrain components created enough resistance that the motors struggled, which led to overcurrent warnings and “short-circuit-like” behavior on the supply. We had to mechanically free up the drivetrain before reliable testing.
 
-- **PWM frequency matters (audible harmonics are real)**: Early motor control produced unpleasant audible harmonics/noise from the motors; increasing the effective PWM frequency reduced audibility, but control accuracy still required iterative tuning. :contentReference[oaicite:4]{index=4}
+- **PWM frequency matters (audible harmonics are real)**: Early motor control produced unpleasant audible harmonics/noise from the motors; increasing the effective PWM frequency reduced audibility, but control accuracy still required iterative tuning.
 
-- **ESP32 camera bring-up is its own project**: Firmware upload issues were caused by the module’s behavior during reflashing; manually resetting/erasing was required before successful programming. Expect significant integration time for camera stacks. :contentReference[oaicite:5]{index=5}
+- **ESP32 camera bring-up is its own project**: Firmware upload issues were caused by the module’s behavior during reflashing; manually resetting/erasing was required before successful programming. Expect significant integration time for camera stacks.
 
-- **Direction was easier than distance**: Our acoustic approach achieved near-perfect direction estimation but produced inaccurate distance estimates. This highlighted sensitivity to microphone geometry, timing, and environmental factors (reflections/noise). :contentReference[oaicite:6]{index=6}
+- **Direction was easier than distance**: Our acoustic approach achieved near-perfect direction estimation but produced inaccurate distance estimates. This highlighted sensitivity to microphone geometry, timing, and environmental factors (reflections/noise).
 
-- **Scope discipline beats “just add more sensors”**: We considered expanding from 3 microphones to 6 to improve accuracy, but time constraints made it infeasible. The better move was to stabilize and validate the existing architecture. :contentReference[oaicite:7]{index=7}
+- **Scope discipline beats “just add more sensors”**: We considered expanding from 3 microphones to 6 to improve accuracy, but time constraints made it infeasible. The better move was to stabilize and validate the existing architecture.
 
-- **Morale is an engineering variable**: Getting the robot driving reliably was a major psychological inflection point for the team and improved execution velocity across remaining integration tasks. :contentReference[oaicite:8]{index=8}
+- **Morale is an engineering variable**: Getting the robot driving reliably was a major psychological inflection point for the team and improved execution velocity across remaining integration tasks.
 
 ## Future Improvements
 With additional time and resources, several improvements could significantly enhance system performance and capability:
