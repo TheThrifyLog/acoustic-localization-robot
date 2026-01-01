@@ -24,7 +24,7 @@ The robot is organized as a set of tightly-coupled subsystems designed to suppor
 ### Sensing Subsystem
 - Microphone array mounted on the robot body for acoustic localization
 - Configurable microphone geometry tested for direction-finding performance
-- ESP32-based camera module used for visual feedback and situational awareness
+- ESP32-based camera module used for visual feedback and situational awareness (functioned but was not mounted to chassis due to time constraints)
 
 ### Compute & Control Subsystem
 - Arduino-based microcontroller handling:
