@@ -7,7 +7,69 @@ This project documents the design and build of a small tracked mobile robot inte
 In real rescue environments, visibility is often poor (smoke, darkness, debris), and reaching a victim quickly can be the difference between life and death. This robot was built to explore whether a compact, rugged ground platform can use acoustic sensing to detect and point toward a sound source, enabling faster search and reducing risk to responders.
 
 ## System Architecture
-High-level description of hardware + software subsystems.
+The robot is organized as a set of tightly-coupled subsystems designed to support mobility, sensing, processing, and operator control. Each subsystem was developed and tested independently before full system integration.
+
+### Mechanical Subsystem
+- Tracked tank-style chassis for all-terrain mobility
+- Christie-style suspension to maintain ground contact and reduce vibration
+- Modular 3D-printed components allowing iterative redesign
+- DC motors coupled to a geared drivetrain and sprockets
+
+### Electrical & Power Subsystem
+- Battery-powered DC system supplying motors and embedded electronics
+- Motor drivers providing bidirectional speed and direction control
+- Power distribution designed to isolate motor noise from sensitive sensors
+
+### Sensing Subsystem
+- Microphone array mounted on the robot body for acoustic localization
+- Configurable microphone geometry tested for direction-finding performance
+- ESP32-based camera module used for visual feedback and situational awareness
+
+### Compute & Control Subsystem
+- Arduino-based microcontroller handling:
+  - Motor control (PWM, direction)
+  - Microphone sampling and preprocessing
+  - Coordination between sensing and actuation
+- ESP32 camera operating as a separate processing node
+
+### Data Flow
+1. Microphones capture acoustic signals from the environment
+2. Embedded code processes relative timing and amplitude differences
+3. Direction estimate is computed and reported
+4. Motor commands are generated for manual or assisted motion
+5. Camera provides real-time visual feedback to the operator
+
+
+### Mechanical Subsystem
+- Tracked tank-style chassis for all-terrain mobility
+- Christie-style suspension to maintain ground contact and reduce vibration
+- Modular 3D-printed components allowing iterative redesign
+- DC motors coupled to a geared drivetrain and sprockets
+
+### Electrical & Power Subsystem
+- Battery-powered DC system supplying motors and embedded electronics
+- Motor drivers providing bidirectional speed and direction control
+- Power distribution designed to isolate motor noise from sensitive sensors
+
+### Sensing Subsystem
+- Microphone array mounted on the robot body for acoustic localization
+- Configurable microphone geometry tested for direction-finding performance
+- ESP32-based camera module used for visual feedback and situational awareness
+
+### Compute & Control Subsystem
+- Arduino-based microcontroller handling:
+  - Motor control (PWM, direction)
+  - Microphone sampling and preprocessing
+  - Coordination between sensing and actuation
+- ESP32 camera operating as a separate processing node
+
+### Data Flow
+1. Microphones capture acoustic signals from the environment
+2. Embedded code processes relative timing and amplitude differences
+3. Direction estimate is computed and reported
+4. Motor commands are generated for manual or assisted motion
+5. Camera provides real-time visual feedback to the operator
+
 
 ## Hardware Design
 Chassis, drivetrain, suspension, sensors, compute.
@@ -22,7 +84,6 @@ Microphone configuration, direction vs distance strategy, limitations.
 What worked, what didn’t, key measurements.
 
 ## Challenges & Lessons Learned
-
 - **3D printing is a schedule risk**: Print failures and tolerance/quality differences between printers impacted fit and forced reprints and redesign decisions. Plan buffer time and validate critical parts early. :contentReference[oaicite:2]{index=2}
 
 - **Mechanical friction can look like an electrical problem**: Stiff drivetrain components created enough resistance that the motors struggled, which led to overcurrent warnings and “short-circuit-like” behavior on the supply. We had to mechanically free up the drivetrain before reliable testing. :contentReference[oaicite:3]{index=3}
