@@ -210,8 +210,11 @@ With additional time and resources, several improvements could significantly enh
 - **Autonomous Behaviors**: Direction estimates could be used to automatically orient or drive toward detected sound sources.
 
 ## Media
-Photos, videos, diagrams.
+Media documenting the build, assembly, and testing process will be added here, including photos and short videos demonstrating mobility and localization experiments.
 
 ## References
-Papers, tutorials, resources used.
-
+- Course materials and advisor guidance from Dr. Seth Wolpert, Dr. Kiana Karami, and Dr. Aldo Morales
+- Online tutorials and documentation for Arduino and ESP32 development
+- HowToMechatronics for tank body design and construction
+- Publicly available resources on acoustic localization and microphone arrays
+- "Acoustic Localization for Autonomous Unmanned Systems" (2020) (IIT)
