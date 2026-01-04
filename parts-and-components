@@ -1,0 +1,38 @@
+# Parts and Components
+
+This document summarizes key hardware components used in the acoustic localization robot prototype, along with rationale and lessons learned. The full bill of materials is provided in `parts-list.xlsx`.
+
+## Mobility & Chassis
+- **Tracked Tank Chassis**
+  - Selected for stability and terrain adaptability
+  - Easy to integrate with 3D-printed modifications
+  - Limitation: hobby-grade materials not suitable for extreme temperatures
+
+## Motors & Drivetrain
+- **DC Gear Motors**
+  - Provided sufficient torque for prototype testing
+  - Audible PWM harmonics observed; mitigated via frequency tuning
+  - Would re-evaluate for production-grade duty cycle
+
+## Sensors
+- **Electret Condenser Microphones**
+  - Chosen for simplicity and availability
+  - Direction estimation performance was strong
+  - Distance estimation limited by geometry and noise sensitivity
+
+## Compute & Control
+- **Arduino Microcontroller**
+  - Reliable for real-time motor control and signal sampling
+  - Adequate for prototype; companion computer recommended for scaling
+
+## Power
+- **Battery System**
+  - Suitable for proof-of-concept
+  - Known limitations in cold environments
+  - Future iterations may explore hybrid or alternative architectures
+
+## Mechanical Fabrication
+- **PLA 3D-Printed Parts**
+  - Enabled rapid iteration
+  - Not suitable for harsh environments
+  - Would transition to higher-temperature or reinforced materials
